@@ -17,7 +17,6 @@ namespace FirstGame
 
         private Sprite animatedSprite;
 
-
         public Rectangle BoundingBox
         {
             get

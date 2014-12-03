@@ -17,6 +17,8 @@ namespace FirstGame
         SpriteBatch spriteBatch;
         Dictionary<string, Texture2D> textureTable = new Dictionary<string, Texture2D>();
 
+        List<GameObject> gameObjects = new List<GameObject>();
+
         public bool gamePaused = false;
         private double timerPause;
 
@@ -72,7 +74,8 @@ namespace FirstGame
             textureTable["playerBlue0"] = Content.Load<Texture2D>("Player/playerBlue0");
             textureTable["projectile1"] = Content.Load<Texture2D>("projectile1");
 
-            player = new Player(textureTable["smileyWalk"], textureTable["projectile1"], new Vector2(500, 500));
+            player = new Player(textureTable["smileyWalk"], 4, 4, Color.White, new Vector2(500, 500));
+            gameObjects.Add(player);
         }
 
         protected override void UnloadContent()
