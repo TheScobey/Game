@@ -7,7 +7,7 @@ using System.Text;
 
 namespace FirstGame
 {
-    public class AnimatedSprite
+    public class Sprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -17,7 +17,7 @@ namespace FirstGame
         private float angle;
 
 
-        public AnimatedSprite(Texture2D texture, int rows, int columns)
+        public Sprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
@@ -33,7 +33,7 @@ namespace FirstGame
                 currentFrame = 0;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, float angle)
+        public void Draw(SpriteBatch spriteBatch, Color color, Vector2 location, float angle)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
@@ -44,7 +44,7 @@ namespace FirstGame
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
             Vector2 origin = new Vector2(width / 2, height / 2);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, angle, origin, SpriteEffects.None, 1);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, color, angle, origin, SpriteEffects.None, 1);
         }
     }
 }

@@ -35,8 +35,8 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="NPC.cs" />
-    <Compile Include="AnimatedSprite.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Sprite.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Particle.cs" />
     <Compile Include="ParticleEngine.cs" />

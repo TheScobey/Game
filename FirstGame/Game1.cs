@@ -27,7 +27,6 @@ namespace FirstGame
         ParticleEngine particleEngine;
         
         //private AnimatedSprite animatedSprite;
-        private NPC actor;
         private Player player;
 
         public Game1()
@@ -73,7 +72,6 @@ namespace FirstGame
             textureTable["playerBlue0"] = Content.Load<Texture2D>("Player/playerBlue0");
             textureTable["projectile1"] = Content.Load<Texture2D>("projectile1");
 
-            actor = new NPC(textureTable["smileyWalk"], new Vector2(100,500));
             player = new Player(textureTable["smileyWalk"], textureTable["projectile1"], new Vector2(500, 500));
         }
 
@@ -109,7 +107,6 @@ namespace FirstGame
                 textbox1.Update(gameTime);
 
                 //animatedSprite.Update();
-                actor.Update();
                 player.Update(gameTime);
 
                 particleEngine.EmitterLocation = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
@@ -141,7 +138,6 @@ namespace FirstGame
 
             textbox1.Draw(spriteBatch, font, textureTable, gameTime);
 
-            actor.Draw(spriteBatch);
             player.Draw(spriteBatch, font);
 
             spriteBatch.End();

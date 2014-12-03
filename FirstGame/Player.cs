@@ -31,13 +31,13 @@ namespace FirstGame
         public float Friction = 0f;
 
 
-        private AnimatedSprite animatedSprite;
+        private Sprite animatedSprite;
         
         public Player(Texture2D texture, Texture2D projectileTexture, Vector2 position)
         {
             this.position = position;
             this.projectileTexture = projectileTexture;
-            animatedSprite = new AnimatedSprite(texture, 4, 4);
+            animatedSprite = new Sprite(texture, 4, 4);
         }
 
         public float CalculateFriction(float velocity, float friction)
@@ -214,7 +214,7 @@ namespace FirstGame
         public void Draw(SpriteBatch spriteBatch, SpriteFont font)
         {
             projectileEngine.Draw(spriteBatch);
-            animatedSprite.Draw(spriteBatch, position, 0f);
+            animatedSprite.Draw(spriteBatch, Color.White, position, 0f);
 
             spriteBatch.DrawString(font, "Sticks: " + GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X + "," + GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y, new Vector2(10, 50), Color.Black);
             spriteBatch.DrawString(font, "Player speed: " + Math.Floor(VelocityX) + "," + Math.Floor(VelocityY), new Vector2(10, 10), Color.Black);
